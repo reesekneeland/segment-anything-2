@@ -17,7 +17,7 @@ AUTHOR_EMAIL = "segment-anything@meta.com"
 LICENSE = "Apache 2.0"
 
 # Read the contents of README file
-with open("README.md", "r", encoding="utf-8") as f:
+with open("README.md", "r") as f:
     LONG_DESCRIPTION = f.read()
 
 # Required dependencies
@@ -136,7 +136,7 @@ setup(
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     license=LICENSE,
-    packages=find_packages(exclude="notebooks"),
+    packages=find_packages(exclude="notebooks", include=["sam2", "sam2.*"]),
     package_data={"": ["*.yaml"]},  # SAM 2 configuration files
     include_package_data=True,
     install_requires=REQUIRED_PACKAGES,
